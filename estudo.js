@@ -15,3 +15,19 @@ document.write(tabuada + " x 10 = " + (tabuada*10) + "<br>" );
 
 }
 
+let lista = ["Jesus","Spessato","Jorge","Duarte","Waldete","Raquel"]
+
+function mostra(){
+    document.write(lista.length + "<br>"); 
+    for(let i = 0; i < lista.length; i++){ 
+        document.write(lista[i] + "<br>");
+    }
+      
+}
+
+function  mostraTabuada(){
+    for(let i = 1; i <= 10; i++){
+        document.write("0 valor do i " + i +  "<br>")
+    }
+}
+
