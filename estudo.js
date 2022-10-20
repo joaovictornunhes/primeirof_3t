@@ -1,47 +1,75 @@
-let tabuada =100;
+let tabuada = 4;
 
-function escreva (){
-document.write("Tabuada do " + tabuada + "<br>" )
-document.write(tabuada + " x 1 = " + (tabuada*1) + "<br>" );
-document.write(tabuada + " x 2 = " + (tabuada*2) + "<br>" );
-document.write(tabuada + " x 3 = " + (tabuada*3) + "<br>" );
-document.write(tabuada + " x 4 = " + (tabuada*4) + "<br>" );
-document.write(tabuada + " x 5 = " + (tabuada*5) + "<br>" );
-document.write(tabuada + " x 6 = " + (tabuada*6) + "<br>" );
-document.write(tabuada + " x 7 = " + (tabuada*7) + "<br>" );
-document.write(tabuada + " x 8 = " + (tabuada*8) + "<br>" );
-document.write(tabuada + " x 9 = " + (tabuada*9) + "<br>" );
-document.write(tabuada + " x 10 = " + (tabuada*10) + "<br>" );
-
+function escreva(){
+    document.write("<h1>Tabuada do " + tabuada + "</h1>");
+    document.write(tabuada + " x 1 = " + (tabuada*1)+"<br>");
+    document.write(tabuada + " x 2 = " + (tabuada*2)+"<br>");
+    document.write(tabuada + " x 3 = " + (tabuada*3)+"<br>");
+    document.write(tabuada + " x 4 = " + (tabuada*4)+"<br>");
+    document.write(tabuada + " x 5 = " + (tabuada*5)+"<br>");
+    document.write(tabuada + " x 6 = " + (tabuada*6)+"<br>");
+    document.write(tabuada + " x 7 = " + (tabuada*7)+"<br>");
+    document.write(tabuada + " x 8 = " + (tabuada*8)+"<br>");
+    document.write(tabuada + " x 9 = " + (tabuada*9)+"<br>");
+    document.write(tabuada + " x 10 = " + (tabuada*10)+"<br>");
 }
 
-let lista = ["Jesus","Spessato","Jorge","Duarte","Waldete","Raquel"]
-
-function mostra(){
-    document.write(lista.length + "<br>"); 
-    for(let i = 0; i < lista.length; i++){ 
-        document.write(lista[i] + "<br>");
-    }
-      
-}
-
-function  mostraTabuada(){
-    for(let i = 1; i <= 10; i++){
-        document.write("0 valor do i " + i +  "<br>")
+function minhaTabuada(){
+    for(let i=1; i <= 10; i++){
+        document.write("Tabuada do " + i + "<br>");
+        for(let j = 1; j <= 10; j++){
+            document.write(i + " x " + j + " = " + (j*i)+"<br>");
+        }
+        document.write("<br>");
     }
 }
 
-function total(){
-    let v = document.getElementById("valor").value;
+function quadrado(){
+    for(let i = 2; i <= 1000; i++){
+            document.write("O quadrado de " + i + " é " + (i*i) + "<br>");
+    }
+}
+
+function calcula(){
+    let val = document.getElementById("valor").value;
     let j = document.getElementById("juros").value;
     let t = document.getElementById("meses").value;
-    let r = 0;
-    for(let i =1; i <=t++) {
-         r = v * (1 + (j/100));
-         document.write("Mês " + i + " - valor: " + r + "<br>")
-         v = r;
+
+    if(!Number(val)){
+        alert("O valor deve ser um número.");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
     }
-    }  
-     document.write("Resultado:" + r);
-  
+    if(!Number(j)){
+        alert("O valor dos juros deve ser um número.");
+        document.getElementById("juros").value = "";
+        document.getElementById("juros").focus();
+        return
+    }
+    if(!Number(t)){
+        alert("A quantidade de meses deve ser um número.");
+        document.getElementById("meses").value = "";
+        document.getElementById("meses").focus();
+        return
+    }
+    let res = val;
+    for(let m=1; m <= t;m++){
+        res = val * (1+(j/100));
+        val = res;
+        document.write("Mês " + m + " = " + res + "<br>");
+    }    
+    document.write("Resultado: "+res);
+}
+
+function somaNotaJoao(){
+    let n1 = document.getElementById("b1").value;
+    let n2 = document.getElementById("b2").value;
+    let n3 = document.getElementById("b3").value;
+    let n4 = document.getElementById("b4").value;
+
+    let  r = Number (n1)+Number(n2)+Number(n3)+Number(n4);
+
+    document.getElementById("resul").innerHTML = "Soma" + r;
+
 }
