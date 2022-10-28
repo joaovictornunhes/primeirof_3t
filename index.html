@@ -1,29 +1,29 @@
-]<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Primeiro F</title>
     <script src="estudo.js"></script>
+    <link rel="stylesheet" href="geral.css">
 </head>
+
 <body>
-    Valor: <input id="valor" type="text"><br>
-    Juros(Mensal): <input id="juros" type="text"><br>
-    Nr. Meses: <input id="meses" type="text"><br>
-    <button onclick="calcula()">Enviar</button>
+    <div class="calculadora">
+        <div id="spTotal">
+            <span id="total">Total: 0,00</span>
+        </div>
+        Capital: <input id="valor" type="text"><br>
+        Juros mensais: <input id="juros" type="text"><br>
+        Nr. meses: <input id="meses" type="text"><br>
+        <button onclick="total()"> Enviar</button><br>
+        <div id="spMes">
+            <span id="mes">Meses</span>
+        </div>
 
-<br><br><br><br>
-<span id="resul">Resutado: 0,00</span><br>
-Bimestre 1: <input id="b1" type="text"><br>
-Bimestre 2: <input id="b2" type="text"><br>
-Bimestre 3: <input id="b3" type="text"><br>
-Bimestre 4: <input id="b4" type="text"><br>
-
-<button onclick="somaNotaJoao()">Soma das Notas</button>
-
-
-
-
+    </div>
 </body>
+
 </html>
